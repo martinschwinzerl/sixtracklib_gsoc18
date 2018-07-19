@@ -1,7 +1,9 @@
-hello: hello.cpp
-	g++ -std=c++0x -o hello hello.cpp -lOpenCL -I/usr/local/cuda-8.0/include/ -L/usr/lib64/nvidia/
+all: hello hello_workaround
 	./hello
+	./hello_workaround
 
-clean:
-	rm -f hello
+hello: hello.cpp
+	g++ -std=c++0x -o $@ $< -lOpenCL
 
+hello_workaround: hello_workaround.cpp
+	g++ -std=c++0x -o $@ $< -lOpenCL
