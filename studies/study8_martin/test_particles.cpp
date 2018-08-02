@@ -44,7 +44,6 @@ int main()
         assert( particles->sigma != nullptr );
         assert( particles->rpp   != nullptr );
         assert( particles->rvv   != nullptr );
-
         assert( particles->num_of_particles == NUM_PARTICLES );
 
         for( st_block_size_t ii = 0 ; ii < NUM_PARTICLES ; ++ii )

@@ -1,6 +1,6 @@
 cmake_minimum_required( VERSION 3.3 )
 
-project( sixtracklib_gsoc2018_study8 )
+project( sixtracklib_gsoc2018_v0 )
 
 # We know where to find the SixTracklib installation -> 
 # set the SixTracklib_DIR variable to help CMake finding it:
@@ -10,10 +10,47 @@ find_package( SixTracklib REQUIRED )
 
 find_package( OpenCL REQUIRED )
 include_directories( ${OpenCL_INCLUDE_DIR} )
+
+#-------------------------------------------------------------------
+# parallel_drift
+
 add_executable( parallel_drift parallel_drift.cpp )
              
 target_link_libraries( parallel_drift SixTracklib::sixtrack ${OpenCL_LIBRARY} )
 
 set_property( TARGET parallel_drift PROPERTY CXX_STANDARD 11 )
 set_property( TARGET parallel_drift PROPERTY CXX_STANDARD_REQUIRED ON )
-set_property( TARGET parallel_drift PROPERTY COMPILE_OPTIONS -Wall -Werror -pedantic) 
+set_property( TARGET parallel_drift PROPERTY COMPILE_OPTIONS -Wall -pedantic) 
+
+#-------------------------------------------------------------------
+# parallel_drift_cleanedup
+
+add_executable( parallel_drift_cleanedup parallel_drift_cleanedup.cpp )
+             
+target_link_libraries( parallel_drift_cleanedup SixTracklib::sixtrack ${OpenCL_LIBRARY} )
+
+set_property( TARGET parallel_drift_cleanedup PROPERTY CXX_STANDARD 11 )
+set_property( TARGET parallel_drift_cleanedup PROPERTY CXX_STANDARD_REQUIRED ON )
+set_property( TARGET parallel_drift_cleanedup PROPERTY COMPILE_OPTIONS -Wall -pedantic) 
+
+#-------------------------------------------------------------------
+# parallel_beam_elements
+
+add_executable( parallel_beam_elements parallel_beam_elements.cpp )
+             
+target_link_libraries( parallel_beam_elements SixTracklib::sixtrack ${OpenCL_LIBRARY} )
+
+set_property( TARGET parallel_beam_elements PROPERTY CXX_STANDARD 11 )
+set_property( TARGET parallel_beam_elements PROPERTY CXX_STANDARD_REQUIRED ON )
+set_property( TARGET parallel_beam_elements PROPERTY COMPILE_OPTIONS -Wall -pedantic) 
+
+#-------------------------------------------------------------------
+#sequential drift_cpu
+
+add_executable( drift_cpu drift_cpu.cpp )
+target_link_libraries( drift_cpu SixTracklib::sixtrack )
+
+set_property( TARGET drift_cpu PROPERTY CXX_STANDARD 11 )
+set_property( TARGET drift_cpu PROPERTY CXX_STANDARD_REQUIRED ON )
+set_property( TARGET drift_cpu PROPERTY COMPILE_OPTIONS -Wall -pedantic )
+
