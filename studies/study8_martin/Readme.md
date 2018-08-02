@@ -6,16 +6,16 @@ This is one quick & dirty way to use the upstream sixtracklib repository for a s
 ## Prerequisities
 * cmake 3.3 or higher
 * gcc and g++ 5.4.x or higher (C++11 support)
-* The dependencies for building the submodules of sixtracklib; here we aim at a minimal build with no external dependencies so if you stick to the instructions below, there are no further requirements 
+* The dependencies for building the submodules of sixtracklib; here we aim at a minimal build with no external dependencies so if you stick to the instructions below, there are no further requirements
 
 ## Preparation: Installing sixtracklib into the external subfolder of study8
 **Assumptions**:
-* this document is located under ${STUDY8_DIR} 
+* this document is located under ${STUDY8_DIR}
 * Upstream sixtracklib will be cloned into ${HOME}/git/sixtracklib
 
 ```
 cd ${HOME}/git
-git clone git@github.com:martinschwinzerl/sixtracklib.git 
+git clone git@github.com:martinschwinzerl/sixtracklib.git
 cd sixtracklib.git
 ```
 We will now verify that all optional backens are disabled to allow for a minimal build:
@@ -34,13 +34,9 @@ Then create a build directory and configure the build process by providing the p
 ```
 mkdir build
 cd build
-<<<<<<< HEAD
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=${STUDY8_DIR}/external -DGTEST_ROOT=/opt/googletest
-=======
-cmake .. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=${STUDY8_DIR}/external 
->>>>>>> martin/preliminary
 ```
-The output should contain no errors. Then build and install by the usual combination of 
+The output should contain no errors. Then build and install by the usual combination of
 ```
 make
 make install
@@ -88,31 +84,31 @@ You should be able to run use_blocks and get an ouput similiar to the one provid
 cd ${STUDY8_DIR}/build
 ./use_blocks
 
-Print these newly created beam_elements: 
+Print these newly created beam_elements:
 
-     0 | type: drift        | length =        0.2 [m] 
-     1 | type: drift        | length =        0.2 [m] 
-     2 | type: drift        | length =        0.2 [m] 
-     3 | type: drift        | length =        0.2 [m] 
-     4 | type: drift        | length =        0.2 [m] 
-     5 | type: drift        | length =        0.2 [m] 
-     6 | type: drift        | length =        0.2 [m] 
-     7 | type: drift        | length =        0.2 [m] 
-     8 | type: drift        | length =        0.2 [m] 
-     9 | type: drift_exact  | length =        0.1 [m] 
+     0 | type: drift        | length =        0.2 [m]
+     1 | type: drift        | length =        0.2 [m]
+     2 | type: drift        | length =        0.2 [m]
+     3 | type: drift        | length =        0.2 [m]
+     4 | type: drift        | length =        0.2 [m]
+     5 | type: drift        | length =        0.2 [m]
+     6 | type: drift        | length =        0.2 [m]
+     7 | type: drift        | length =        0.2 [m]
+     8 | type: drift        | length =        0.2 [m]
+     9 | type: drift_exact  | length =        0.1 [m]
 
-Print the copied beam_elements: 
+Print the copied beam_elements:
 
-     0 | type: drift        | length =        0.2 [m] 
-     1 | type: drift        | length =        0.2 [m] 
-     2 | type: drift        | length =        0.2 [m] 
-     3 | type: drift        | length =        0.2 [m] 
-     4 | type: drift        | length =        0.2 [m] 
-     5 | type: drift        | length =        0.2 [m] 
-     6 | type: drift        | length =        0.2 [m] 
-     7 | type: drift        | length =        0.2 [m] 
-     8 | type: drift        | length =        0.2 [m] 
-     9 | type: drift_exact  | length =        0.1 [m] 
+     0 | type: drift        | length =        0.2 [m]
+     1 | type: drift        | length =        0.2 [m]
+     2 | type: drift        | length =        0.2 [m]
+     3 | type: drift        | length =        0.2 [m]
+     4 | type: drift        | length =        0.2 [m]
+     5 | type: drift        | length =        0.2 [m]
+     6 | type: drift        | length =        0.2 [m]
+     7 | type: drift        | length =        0.2 [m]
+     8 | type: drift        | length =        0.2 [m]
+     9 | type: drift_exact  | length =        0.1 [m]
 
 
 Finished successfully!

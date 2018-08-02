@@ -20,11 +20,9 @@ endif()
 add_executable( use_blocks use_blocks.cpp )
 target_link_libraries( use_blocks SixTracklib::sixtrack )
 
-
 set_property( TARGET use_blocks PROPERTY CXX_STANDARD 11 )
 set_property( TARGET use_blocks PROPERTY CXX_STANDARD_REQUIRED ON )
 set_property( TARGET use_blocks PROPERTY COMPILE_OPTIONS -Wall -Werror -pedantic )
-
 
 # -----------------------------------------------------------------------------
 # test_particles:
